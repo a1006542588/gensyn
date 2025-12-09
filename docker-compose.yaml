@@ -45,6 +45,7 @@ services:
     environment:
       - HF_TOKEN=${HF_TOKEN}
       - GENSYN_RESET_CONFIG=${GENSYN_RESET_CONFIG}
+      - IDENTITY_PATH=/home/gensyn/rl_swarm/keys/swarm.pem
       - OLLAMA_HOST=http://ollama:11434
 
   # Requires the NVIDIA Drivers version >=525.60.13 to be installed, as well
@@ -71,6 +72,7 @@ services:
     environment:
       - HF_TOKEN=${HF_TOKEN}
       - GENSYN_RESET_CONFIG=${GENSYN_RESET_CONFIG}
+      - IDENTITY_PATH=/home/gensyn/rl_swarm/keys/swarm.pem
       - OLLAMA_HOST=http://ollama:11434
     deploy:
       resources:
