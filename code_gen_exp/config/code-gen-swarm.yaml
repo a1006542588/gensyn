@@ -95,9 +95,9 @@ game_manager:
     num_transplant_trees: ${training.num_transplant_trees}
   communication_kwargs:
     identity_path: ${oc.env:IDENTITY_PATH,null}
-    startup_timeout: 120
+    startup_timeout: 600  # 增加到10分钟,适应慢速网络
     beam_size: 10
-    get_retries: 1
+    get_retries: 5  # 增加重试次数
   coordinator:
     _target_: code_gen_exp.src.coordinator.ModalSwarmCoordinator
     web3_url: ${blockchain.alchemy_url}
