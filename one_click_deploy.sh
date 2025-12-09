@@ -224,7 +224,7 @@ config_choice=${config_choice:-2}
 case $config_choice in
     2)
         echo -e "${GREEN}✅ 使用优化配置${NC}"
-        mkdir -p user/configs
+        mkdir -p user/{configs,keys,logs,modal-login}
         
         if [ -f "user/configs/code-gen-swarm.yaml" ]; then
             echo -e "${YELLOW}配置文件已存在，跳过${NC}"
@@ -375,6 +375,7 @@ YAML_EOF
         ;;
     *)
         echo -e "${GREEN}✅ 使用默认配置${NC}"
+        mkdir -p user/{configs,keys,logs,modal-login}
         USE_OPTIMIZED=false
         ;;
 esac
